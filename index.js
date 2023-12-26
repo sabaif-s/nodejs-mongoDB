@@ -26,24 +26,48 @@ const nameSchema=  mongoose.Schema({
     text:String
 })
 
-const Name=mongoose.model("Name",nameSchema);
+const adminSchema=new mongoose.Schema({
+    username:String,
+    password:String
+})
 
+const Name=mongoose.model("Name",nameSchema);
+const Admin=mongoose.model("Admin",adminSchema);
 const newName= new Name({
     name:"Sabaif",
     text:"Akkam Nagahaa"
-})
-
-newName.save();
-   
+}) 
 
 app.get("/",(req,res)=>{
-    res.render("home")
+    res.render("form");
 })
 
 app.get("/example",(req,res)=>{
     Name.find()
     .then((array)=>{
         res.render("example",{array:array});
+    })
+    .catch((err)=>{
+        console.log(err);
+    })
+})
+app.post("/login",(req,res)=>{
+ const newUser=new Admin({
+    username:req.body.username,
+    password:req.body.password
+ })
+ newUser.save()
+ .then((saved)=>{
+    console.log(saved);
+ })
+ .catch((err)=>{
+    console.log(err);
+ })
+})
+app.get("/getpass",(req,res)=>{
+    Admin.find()
+    .then((array)=>{
+        res.render("pass",{array:array})
     })
     .catch((err)=>{
         console.log(err);

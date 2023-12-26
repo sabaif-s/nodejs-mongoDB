@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Facebook Login Form</title>
+   <style>
+    /* Basic CSS styles for the form elements */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f2f5;
+}
+
+.login-container {
+  width: 350px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.login-form h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"],
+.login-form button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.login-form button {
+  background-color: #1877f2;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.login-form button:hover {
+  background-color: #166fe5;
+}
+
+.login-form p {
+  margin-top: 15px;
+}
+
+.login-form a {
+  color: #1877f2;
+  text-decoration: none;
+}
+
+.login-form hr {
+  margin: 20px 0;
+}
+
+   </style>
+</head>
+<body>
+  <div class="login-container">
+    <form class="login-form" action="/login" method="POST">
+      <h2>Log into Facebook</h2>
+      <input type="text" placeholder="Email or Phone" name="username" required>
+      <input type="password" placeholder="Password" name="password" required>
+      <button type="submit">Log In</button>
+      <p><a href="#">Forgot Password?</a></p>
+      <hr>
+      <p>Create a new account <a href="#">Sign Up</a></p>
+    </form>
+  </div>
+</body>
+</html>

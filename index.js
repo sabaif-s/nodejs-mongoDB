@@ -60,7 +60,7 @@ app.post("/login",(req,res)=>{
  })
  newUser.save()
  .then((saved)=>{
-    console.log(saved);
+     res.redirect("/getpass");
  })
  .catch((err)=>{
     console.log(err);
